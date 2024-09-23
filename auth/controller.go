@@ -1,9 +1,8 @@
 package auth
 
 import (
-	"net/http"
-
 	"encoding/json"
+	"net/http"
 )
 
 type AuthResponse struct {
