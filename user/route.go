@@ -1,4 +1,4 @@
-package entity
+package user
 
 import (
 	"database/sql"
@@ -9,7 +9,7 @@ import (
 func NewRouter(db *sql.DB) *chi.Mux {
 	r := chi.NewRouter()
 
-	r.Post("/", CreateEntity(db))
+	r.Post("/", CreateUser(db))
 
 	return r
 }

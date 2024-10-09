@@ -13,6 +13,7 @@ import (
 
 	"qonsole-api/auth"
 	"qonsole-api/entity"
+	"qonsole-api/user"
 )
 
 func main() {
@@ -37,5 +38,6 @@ func main() {
 	r := chi.NewRouter()
 	r.Mount("/auth", auth.NewRouter())
 	r.Mount("/entity", entity.NewRouter(db))
+	r.Mount("/user", user.NewRouter(db))
 	http.ListenAndServe(":3000", r)
 }
