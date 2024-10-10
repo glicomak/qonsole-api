@@ -12,6 +12,9 @@ import (
 	"github.com/joho/godotenv"
 
 	"qonsole-api/auth"
+	"qonsole-api/chat"
+	"qonsole-api/chatspace"
+	"qonsole-api/component"
 	"qonsole-api/entity"
 	"qonsole-api/user"
 )
@@ -37,6 +40,9 @@ func main() {
 
 	r := chi.NewRouter()
 	r.Mount("/auth", auth.NewRouter())
+	r.Mount("/chat", chat.NewRouter(db))
+	r.Mount("/chatspace", chatspace.NewRouter(db))
+	r.Mount("/component", component.NewRouter(db))
 	r.Mount("/entity", entity.NewRouter(db))
 	r.Mount("/user", user.NewRouter(db))
 	http.ListenAndServe(":3000", r)

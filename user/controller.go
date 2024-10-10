@@ -7,12 +7,12 @@ import (
 )
 
 type User struct {
-	Id			string	`json:"id"`
-	Name		string	`json:"name"`
-	EntityId	string	`json:"entityId"`
-	Password	string	`json:"password"`
-	FirstName	string	`json:"firstName"`
-	LastName	string	`json:"lastName"`
+	Id        string `json:"id"`
+	Name      string `json:"name"`
+	EntityId  string `json:"entityId"`
+	Password  string `json:"password"`
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
 }
 
 func CreateUser(db *sql.DB) http.HandlerFunc {
